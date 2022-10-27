@@ -87,20 +87,16 @@ agree = st.sidebar.checkbox('Show original word')
 #show_answer(option, agree)
 
 option = ""
-text_option = ""
 #test_option = st.text_input('type your own!!', on_change=show_answer(option, agree))
 
 #if test_option == "":
 option = st.selectbox(
         'Choose a word or...',
          ('', 'apple', 'appll', 'lamon', 'language', 'hapy', 'gray'))
-text_option = st.text_input('type your own!!')#, on_change=show_answer(text_option, agree))
+option = st.text_input('type your own!!', value=option)
 
-if option != "" or text_option!="":# and st.button('submit'):
-    if option != "":
-        in_option = option
-    else:
-        in_option = text_option
+if option != "":
+    in_option = option
     if agree:
         st.write('Original word: ', in_option)
         
